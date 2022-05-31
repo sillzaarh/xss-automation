@@ -1,4 +1,4 @@
-# rxss
+# reflected Cross Site Scripting (R-XSS) Automation Tool
 This simple python script will take URLs and payloads through stdin and checks if the payload is getting reflected back in the response, and that way it is finding reflected XSS.
 
 # Usage
