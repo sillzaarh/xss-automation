@@ -1,2 +1,2 @@
-# xss-automator
+# rxss
 Cross Site Scripting (XSS) Automation Tool
