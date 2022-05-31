@@ -5,7 +5,7 @@ This simple python script will take URLs and payloads through stdin and checks i
 <pre><code>
 usage: rxss [-h] [-u] [-l] [-p] [-P]
 
-Cross Site Scripting (XSS) Autotmation Tool
+Reflected Cross Site Scripting (R-XSS) Autotmation Tool
 
 options:
   -h, --help            show this help message and exit
