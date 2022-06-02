@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os, requests, urllib3, threading, argparse, urllib.parse as urlparse
+urllib3.disable_warnings()
 
 # Required arguments are set
 parser = argparse.ArgumentParser(description="Reflected Cross Site Scripting (R-XSS) Autotmation Tool")
