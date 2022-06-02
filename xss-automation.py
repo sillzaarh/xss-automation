@@ -51,7 +51,7 @@ if args.url:
             
             # Send request to the provided URL with each payloads
             for payload in payloads:
-                payload = payload.replace("\n","")
+                payload = payload.strip()
                 try:
                     t = threading.Thread(target=find_xss, args=(args.url, payload,))
                     t.start()
@@ -86,9 +86,9 @@ if args.list:
 
                 # Send request to each URL with each and every payloads
                 for url in urls:
-                    url = url.replace("\n", "")
+                    url = url.strip()
                     for payload in payloads:
-                        payload = payload.replace("\n", "")
+                        payload = payload.strip()
                         try:
                             t = threading.Thread(target=find_xss, args=(url, payload,))
                             t.start()
@@ -100,7 +100,7 @@ if args.list:
         # Checks if --payload argument is set or not
         elif args.payload:
             for url in urls:
-                url = url.replace("\n", "")
+                url = url.strip()
                 try:
                     t = threading.Thread(target=find_xss, args=(url, args.payload,))
                     t.start()
