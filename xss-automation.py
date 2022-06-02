@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 
-import os
-import requests
-import urllib3
-import threading
-import argparse
-import urllib.parse as urlparse
-
+import os, requests, urllib3, threading, argparse, urllib.parse as urlparse
 
 # Required arguments are set
 parser = argparse.ArgumentParser(description="Reflected Cross Site Scripting (R-XSS) Autotmation Tool")
