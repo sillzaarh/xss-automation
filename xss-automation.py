@@ -27,7 +27,7 @@ def modified_url(url, payload):
 
 def find_xss(url, payload):
     mod_url = modified_url(url, payload)
-    res = requests.get(mod_url, allow_redirects=False)
+    res = requests.get(mod_url, allow_redirects=False, timeout=3)
     
     if payload in res.text:
         print(res.url)
