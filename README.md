@@ -14,6 +14,4 @@ options:
   -p , --payload        enter the payload you want to inject
   -P , --payload_list   enter the path to file of list of payloads
   
-</pre></code><br>
-
-> *Don't hate the hacker, hate the code*
+</pre></code>
