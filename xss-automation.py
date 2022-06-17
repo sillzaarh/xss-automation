@@ -27,10 +27,12 @@ def modified_url(url, payload):
 
 def find_xss(url, payload):
     mod_url = modified_url(url, payload)
-    res = requests.get(mod_url, allow_redirects=False, timeout=3)
-    
-    if payload in res.text:
-        print(res.url)
+    if mod_url != None:
+        try:
+            res = requests.get(mod_url, allow_redirects=False, timeout=3)
+            if payload in res.text:
+                print(res.url)
+        except: pass
 
 # Checks if the --url argument is set or not
 if args.url:
@@ -83,7 +85,7 @@ if args.list:
                 for url in urls:
                     url = url.strip()
                     for payload in payloads:
-                        payload = payload.strip()
+                        payload = payload.replace("\n", "")
                         try:
                             t = threading.Thread(target=find_xss, args=(url, payload,))
                             t.start()
@@ -95,7 +97,7 @@ if args.list:
         # Checks if --payload argument is set or not
         elif args.payload:
             for url in urls:
-                url = url.strip()
+                url = url.replace("\n", "")
                 try:
                     t = threading.Thread(target=find_xss, args=(url, args.payload,))
                     t.start()
